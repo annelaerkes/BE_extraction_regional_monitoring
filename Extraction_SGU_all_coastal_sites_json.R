@@ -8,6 +8,7 @@ library(tidyverse)
 library(fmcom)
 library(readxl) 
 library(openxlsx) 
+library(sf)
 
 # import support files ----
 con <- read.csv("contaminants_SGU_NRM_copy.csv") |>
@@ -19,6 +20,7 @@ TC <- read_excel("PFAS_tissue_conversion.xlsx", sheet ='HELCOM') |>
   filter(!is.na(perch)) |>
   pivot_longer(perch:eelpout,names_to="species_EN", values_to="TC") |>
   filter(!is.na(TC))
+
 
 # function for extrating SGU data ----
 get_species_ogc <- function(species    = c("Abborre", "Tanglake"),
@@ -66,10 +68,32 @@ get_species_ogc <- function(species    = c("Abborre", "Tanglake"),
   dplyr::bind_rows(all_pages)
 }
 
+
 # make call to api ----
 df <- get_species_ogc(species = c("Abborre", "Tanglake"),
                       from_year = 2014, to_year = 2023) |>
   dplyr::rename_with(~ sub("^properties\\.", "", .x))
+
+# extract station long/lat ----
+station_cor <- df |>
+  filter(!is.na(e)) |>
+  st_as_sf(
+    coords = c("e", "n"),
+    crs = 3006,
+    remove = FALSE
+  ) %>%
+  st_transform(4326) %>%
+  mutate(
+    longitude = st_coordinates(.)[, 1],
+    latitude  = st_coordinates(.)[, 2]
+  ) %>%
+  st_drop_geometry() |>
+  filter(provtagningssyfte!='NMO',
+         bestalld_undersokning!='Effektscreening miljögifter') |>
+  distinct(provplatsnamn, latitude, longitude) |>
+  rename(station_name='provplatsnamn')
+
+
 
 # massage data ----
 df1 <- df |>
@@ -198,7 +222,10 @@ left_join(TC, by = c("species_EN","contaminant")) |>
     organ = case_when(
       organ == 'Muscle' & substance_group == 'PFAS' ~ 'Liver',
       TRUE ~ organ
-  ))
+  )) |>
+  left_join(station_cor, by='station_name')
+
+
 
 ## guarantee every fmcom column exists, even if lack in SGU_data ----
 missing_cols <- setdiff(colnames(fmcom), colnames(df2))
