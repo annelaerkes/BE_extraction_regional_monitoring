@@ -27,7 +27,8 @@ s <- read_excel('original_data/fisk-miljogifter-radata-ar-2010-2023-2_stockholm_
            'PCB 28 ng/g lipid muskel':'PCB180 ng/g lipid muskel','PBDE 47* ng/g lipid muskel':'PBDE-209* ng/g lipid muskel','HBCD* ng/g lipid muskel',
            'HBCD µg/kg vv muskel','PFOS (MB) µg/kg vv muskel':'Kvicksilver (MB) µg/kg vv muskel')) |>
   filter(Lokal == 'Lilla Värtan'|Lokal =='Strömmen'|Lokal=='Brunnsviken') |>
-  arrange(Lokal)
+  arrange(Lokal) |>
+  mutate(specimen_ID=paste0(Lokal,'_',År))
 
 ss <- s[, !sapply(s, function(x) {
   all(is.na(x)) ||
@@ -37,6 +38,7 @@ ss <- s[, !sapply(s, function(x) {
 
 sss <- ss |>
   pivot_longer('PCB28 µg/kg vv muskel':'Kvicksilver (MB) µg/kg vv muskel',names_to = 'contaminant', values_to='value') |>
+  ## streamlined contaminant names to macth fmcom ----
   mutate(
     original_name = contaminant,
     
@@ -57,8 +59,8 @@ sss <- ss |>
   filter(!is.na(value)) |>
   mutate(contaminant = if_else(contaminant=='Kvicksilver (MB)','Hg', contaminant))|>
   mutate(contaminant = if_else(contaminant=='PFOS (MB)','PFOS', contaminant)) |>
-  pivot_longer('Fetthalt muskel %':'Fetthalt lever %', names_to='fat_tissue',values_to='fat_percentage') |> 
-  filter(!is.na(fat_percentage)) |>
+  ### included lipid content in muscle only as only muscle samples in the data except for PFAS ---- 
+  rename(fat_percentage = 'Fetthalt muskel %') |>
   select(!original_name) |>
   mutate(
     contaminant = contaminant |>
@@ -75,10 +77,11 @@ sss <- ss |>
     class = 'Fish',
     is_censored = if_else(value > 0, FALSE, TRUE),
     value = abs(as.numeric(value))) |>
-  select(!c(weight_unit,fat_tissue,Art, 'Poolat prov Ja/Nej')) |>
+  select(!c(weight_unit,Art, 'Poolat prov Ja/Nej')) |>
   rename(station_name = 'Lokal', year = 'År', number_individuals='Antal fiskar i poolat prov')
 
 s4 <- sss |>
+  ### streamlined contaminant names to match fmcom ----
   mutate(
     contaminant = contaminant |>
       str_replace("^PCB(?=\\d)", "CB") |>
@@ -104,14 +107,17 @@ s4 <- sss |>
   ## convert PCB and BFR substance_groups ww to lw ----
   mutate(
     value = case_when(
-      unit == 'ng.g-1.ww-1' & (substance_group == 'BFRs'|substance_group == 'PCBs') ~ value/fat_percentage,
+      unit == 'ng.g-1.ww-1' & 
+        (substance_group == 'BFRs'|substance_group == 'PCBs') ~ value/fat_percentage,
       TRUE ~ value),
     unit = case_when(
-      unit == 'ng.g-1.ww-1' & (substance_group == 'BFRs' |substance_group == 'PCBs')~ 'ng.g-1.lw-1',
+      unit == 'ng.g-1.ww-1' & 
+        (substance_group == 'BFRs' |substance_group == 'PCBs')~ 'ng.g-1.lw-1',
       TRUE ~ unit
   )) |>
   ## remove contaminants which are not in the fmcom ----
-  filter(!is.na(substance_group))
+  filter(!is.na(substance_group),
+         !is.na(value))
 
 
 ## guarantee every fmcom column exists, even if lack in SGU_data ----
