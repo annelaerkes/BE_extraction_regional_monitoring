@@ -12,7 +12,7 @@ library(sf)
 
 # import support files ----
 con <- read.csv("contaminants_SGU_NRM_copy.csv") |>
-  select(contaminant, substance_group, UNIK_PARAMETERKOD) |>
+  select(contaminant, substance_group, UNIK_PARAMETERKOD, CAS_number) |>
   rename(contaminant_code_SGU = 'UNIK_PARAMETERKOD')
 
 TC <- read_excel("PFAS_tissue_conversion.xlsx", sheet ='HELCOM') |>
@@ -235,5 +235,5 @@ df2[missing_cols] <- NA
 df2 <- df2[, colnames(fmcom)]
 
 # export dataset ----
-write.xlsx(df2,"modified_data/SGU_download_contaminated_v2.xlsx",showNA = FALSE, rowNames=FALSE)
+write.xlsx(df2,"modified_data/SGU_download_contaminated_json.xlsx",showNA = FALSE, rowNames=FALSE)
 
