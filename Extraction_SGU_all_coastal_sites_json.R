@@ -223,7 +223,14 @@ left_join(TC, by = c("species_EN","contaminant")) |>
       organ == 'Muscle' & substance_group == 'PFAS' ~ 'Liver',
       TRUE ~ organ
   )) |>
-  left_join(station_cor, by='station_name')
+  left_join(station_cor, by='station_name') |>
+  ## add info on stations without lat/long
+  mutate(station_name = case_when(
+    station_name == 'Sa1' ~ 'Oxelosund_Sa1',
+    station_name == 'Da1' ~ 'Oxelosund_Da1',
+    station_name == 'Ha1' ~ 'Oxelosund_Ha1',
+    TRUE ~station_name
+  ))
 
 
 
