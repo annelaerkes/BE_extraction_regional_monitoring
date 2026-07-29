@@ -1,0 +1,141 @@
+contaminant,substance_group,contaminant_full_name,contaminant_alt_name,CAS_number,UNIK_PARAMETERKOD,SGU_Label,NRM_PARAMETERKOD
+BDE28,BFRs,"2,4,4'-Tribromodiphenyl ether",PBDE28,41318-75-6,CH07/221,"2,4,4'-Tribromdifenyleter (PBDE28)",BDE-28
+BDE47,BFRs,"2,2',4,4'-Tetrabromodiphenyl ether",PBDE47,5436-43-1,CH07/145,"2,2',4,4'-Tetrabromdifenyleter (PBDE47)",BDE-47
+BDE99,BFRs,"2,2',4,4',5-Pentabromodiphenyl ether",PBDE99,60348-60-9,CH07/140,"2,2',4,4',5-Pentabromdifenyleter (PBDE99)",BDE-99
+BDE100,BFRs,"2,2',4,4',6-Pentabromodiphenyl ether",PBDE100,189084-64-8,CH07/144,"2,2',4,4',6-Pentabromdifenyleter (PBDE100)",BDE-100
+BDE153,BFRs,"2,2',4,4',5,5'-Hexabromodiphenyl ether",PBDE153,68631-49-2,CH07/137,"2,2',4,4',5,5'-Hexabromdifenyleter (PBDE153)",BDE-153
+BDE154,BFRs,"2,2',4,4',5,6'-Hexabromodiphenyl ether",PBDE154,207122-15-4,CH07/139,"2,2',4,4',5,6'-Hexabromdifenyleter (PBDE154)",BDE-154
+BDE209,BFRs,"2,2',3,3',4,4',5,5',6,6'-Decabromodiphenyl ether",PBDE209,1163-19-5,CH07/89,"2,2',3,3',4,4',5,5',6,6'-Dekabromdifenyleter (PBDE209)",BDE-209
+HBCD,BFRs,Hexabromocyclododecane,HBCD,25637-99-4; 3194-55-6,CH07/422,Hexabromcyklododekan (HBCD),HBCD
+TCDD,Dioxins and furans,"2,3,7,8-Tetrachlorodibenzo-p-dioxin","2,3,7,8-TCDD",1746-01-6,CH07/215,"2,3,7,8-Tetraklordibenso-p-dioxin (2,3,7,8-TCDD)",TCDD
+PECDD,Dioxins and furans,"1,2,3,7,8-Pentachlorodibenzo-p-dioxin","1,2,3,7,8-PeCDD",40321-76-4,CH07/61,"1,2,3,7,8-Pentaklordibenso-p-dioxin (1,2,3,7,8-PeCDD)",PECDD
+HXCDD1,Dioxins and furans,"1,2,3,4,7,8-Hexachlorodibenzo-p-dioxin","1,2,3,4,7,8-HxCDD",39227-28-6,CH07/33,"1,2,3,4,7,8-Hexaklordibenso-p-dioxin (1,2,3,4,7,8-HxCDD)",HXCDD1
+HXCDD2,Dioxins and furans,"1,2,3,6,7,8-Hexachlorodibenzo-p-dioxin","1,2,3,6,7,8-HxCDD",57653-85-7,CH07/47,"1,2,3,6,7,8-Hexaklordibenso-p-dioxin (1,2,3,6,7,8-HxCDD)",HXCDD2
+HXCDD3,Dioxins and furans,"1,2,3,7,8,9-Hexachlorodibenzo-p-dioxin","1,2,3,7,8,9-HCDD",19408-74-3,CH07/53,"1,2,3,7,8,9-Hexaklordibenso-p-dioxin (1,2,3,7,8,9-HxCDD)",HXCDD3
+HPCDD,Dioxins and furans,"1,2,3,4,6,7,8-Heptachlorodibenzo-p-dioxin","1,2,3,4,6,7,8-HpCDD",35822-46-9,CH07/23,"1,2,3,4,6,7,8-Heptaklordibenso-p-dioxin (1,2,3,4,6,7,8-HpCDD)",HPCDD
+OCDD,Dioxins and furans,"1,2,3,4,6,7,8,9-Octachlorodibenzo-p-dioxin","1,2,3,4,6,7,8,9-OCDD",3268-87-9,CH07/17,"1,2,3,4,6,7,8,9-Oktaklordibenso-p-dioxin (1,2,3,4,6,7,8,9-OCDD)",OCDD
+TCDF,Dioxins and furans,"2,3,7,8-Tetrachlorodibenzofuran","2,3,7,8-TCDF",51207-31-9,CH07/214,"2,3,7,8-Tetraklordibensofuran (2,3,7,8-TCDF)",TCDF
+PECDF1,Dioxins and furans,"1,2,3,7,8-Pentachlorodibenzofuran","1,2,3,7,8-PeCDF",57117-41-6,CH07/60,"1,2,3,7,8-Pentaklordibensofuran (1,2,3,7,8-PeCDF)",PECDF1
+PECDF2,Dioxins and furans,"2,3,4,7,8-Pentachlorodibenzofuran","2,3,4,7,8-PeCDF",57117-31-4,CH07/197,"2,3,4,7,8-Pentaklordibensofuran (2,3,4,7,8-PeCDF)",PECDF2
+HXCDF1,Dioxins and furans,"1,2,3,4,7,8-Hexachlorodibenzofuran","1,2,3,4,7,8-HxCDF",70648-26-9,CH07/32,"1,2,3,4,7,8-Hexaklordibensofuran (1,2,3,4,7,8-HxCDF)",HXCDF1
+HXCDF2,Dioxins and furans,"1,2,3,6,7,8-Hexachlorodibenzofuran","1,2,3,6,7,8-HxCDF",57117-44-9,CH07/46,"1,2,3,6,7,8-Hexaklordibensofuran (1,2,3,6,7,8-HxCDF)",HXCDF2
+HXCDF3,Dioxins and furans,"2,3,4,6,7,8-Hexachlorodibenzofuran","2,3,4,6,7,8-HxCDF",60851-34-5,CH07/191,"2,3,4,6,7,8-Hexaklordibensofuran (2,3,4,6,7,8-HxCDF)",HXCDF3
+HXCDF4,Dioxins and furans,"1,2,3,7,8,9-Hexachlorodibenzofuran","1,2,3,7,8,9-HxCDF",72918-21-9,CH07/52,"1,2,3,7,8,9-Hexaklordibensofuran (1,2,3,7,8,9-HxCDF)",HXCDF4
+HPCDF1,Dioxins and furans,"1,2,3,4,6,7,8-Heptachlorodibenzofuran","1,2,3,4,6,7,8-HpCDF",67562-39-4,CH07/22,"1,2,3,4,6,7,8-Heptaklordibensofuran (1,2,3,4,6,7,8-HpCDF)",HPCDF1
+HPCDF2,Dioxins and furans,"1,2,3,4,7,8,9-Heptachlorodibenzofuran","1,2,3,4,7,8,9-HpCDF",55673-89-7,CH07/27,"1,2,3,4,7,8,9-Heptaklordibensofuran (1,2,3,4,7,8,9-HpCDF)",HPCDF2
+OCDF,Dioxins and furans,"1,2,3,4,6,7,8,9-Octachlorodibenzofuran","1,2,3,4,6,7,8,9-OCDF",39001-02-0,CH07/16,"1,2,3,4,6,7,8,9-Oktaklordibensofuran (1,2,3,4,6,7,8,9-OCDF)",OCDF
+Ni,Metals,Nickel,Ni,7440-02-0,CH01/123,Nickel,NITSI
+Pb,Metals,Lead,Pb,7439-92-1,CH01/21,Bly,PBTSI
+Se,Metals,Selenium,Se,7782-49-2,CH02/112,Selen,SETSI
+Ag,Metals,Silver,Ag,7440-22-4,CH01/137,Silver,AGTSI
+As,Metals,Arsenic,As,7440-38-2,CH01/13,Arsenik,ASTSI
+Cd,Metals,Cadmium,Cd,7440-43-9,CH01/55,Kadmium,CDTSI
+Cr,Metals,Chromium,Cr,7440-47-3,CH01/81,Krom,CRTSI
+Cu,Metals,Copper,Cu,7440-50-8,CH01/77,Koppar,CUTSI
+Sn,Metals,Tin,Sn,7440-31-5,CH01/145,Tenn,SNTSI
+Zn,Metals,Zinc,Zn,7440-66-6,CH01/165,Zink,ZNTSI
+Hg,Metals,Mercury,Hg,7439-97-6,CH01/86,Kvicksilver,HGFSI
+Al,Metals,Aluminium,Al ,7429-90-5,CH01/1,Aluminium,ALTSI
+Sb,Metals,Antimon,Sb,7440-36-0,CH01/12,Antimon,SBTSI
+Bi,Metals,Bismuth,Bi,7440-69-9,CH01/160,Vismut,BI
+MOT,Organotin compounds,Monooctyltin ion,,-,CH01/174,Monooktyltenn-jon,MOT
+TPT,Organotin compounds,Triphenyltin ion,,668-34-8,CH09/638,Trifenyltenn-jon,TPT
+MPT,Organotin compounds,Monophenyltin ion,,-,CH09/467,Monofenyltenn-jon,MPT
+DIOT,Organotin compounds,Dioctyltin,,-,CH01/172,Dioktyltenn-jon,DIOT
+DIPT,Organotin compounds,Diphenyltin ion,,-,CH09/195,Difenyltenn-jon,DIPT
+TBT,Organotin compounds,Tributyltin ion,,36643-28-4,CH09/630,Tributyltenn-jon,TBT
+DIBT,Organotin compounds,Dibutyltin ion,,1002-53-5,CH09/182,Dibutyltenn-jon,DIBT
+MBT,Organotin compounds,Monobutyltin ion,,78763-54-9,CH09/465,Monobutyltenn-jon,MBT
+ANT,PAH,Anthracene,,120-12-7,CH06/177,Antracen,ANT
+FLU,PAH,Fluoranthene,,206-44-0,CH06/293,Fluoranten,FLU
+NAP,PAH,Naphthalene,,91-20-3,CH06/347,Naftalen,NAP
+ACNE,PAH,Acenaphthene,,83-32-9,CH06/169,Acenaften,ACNE
+PA,PAH,Phenanthrene,,1985-01-08,CH06/278,Fenantren,PA
+PYR,PAH,Pyrene,,129-00-0,CH06/409,Pyren,PYR
+BAA,PAH,Benzo[a]anthracene,,56-55-3,CH06/195,Benso[a]antracen,BAA
+BKF,PAH,Benzo[k]fluoranthene,,207-08-9,CH06/217,Benso[k]fluoranten,BKF
+FLE,PAH,Fluorene,,86-73-7,CH06/294,Fluoren,FLE
+CHR,PAH,Chrysene,,218-01-9,CH06/314,Krysen,CHR
+BBF,PAH,Benzo[b]fluoranthene,,205-99-2,CH06/202,Benso[b]fluoranten,BBF
+BAP,PAH,Benzo[a]pyrene,,50-32-8,CH06/199,Benso[a]pyren,BAP
+DBAHA,PAH,"Dibenzo[a,h]anthracene",,53-70-3,CH06/241,"Dibenso[a,h]antracen",DBAHA
+BGHIP,PAH,Benzo[ghi]perylene,,191-24-2,CH06/213,Benso[ghi]perylen,BGHIP
+ICDP,PAH,"Indeno[1,2,3-cd]pyrene",,193-39-5,CH06/301,"Indeno[1,2,3-cd]pyren",ICDP
+CB77,PCBs,"3,3',4,4'-Tetrachlorobiphenyl",PCB77,32598-13-3,CH07/260,"3,3',4,4'-Tetraklorbifenyl (PCB77)",CB-77
+CB81,PCBs,"3,4,4',5-Tetrachlorobiphenyl",PCB81,70362-50-4,CH07/265,"3,4,4',5-Tetraklorbifenyl (PCB81)",CB-81
+CB126,PCBs,"3,3',4,4',5-Pentachlorobiphenyl",PCB126,57465-28-8,CH07/258,"3,3',4,4',5-Pentaklorbifenyl (PCB126)",CB-126
+CB169,PCBs,"3,3',4,4',5,5'-Hexachlorobiphenyl",PCB169,32774-16-6,CH07/256,"3,3',4,4',5,5'-Hexaklorbifenyl (PCB169)",CB-169
+CB105,PCBs,"2,3,3',4,4'-Pentachlorobiphenyl",PCB105,32598-14-4,CH07/175,"2,3,3',4,4'-Pentaklorobifenyl (PCB105)",CB-105
+CB114,PCBs,"2,3,4,4',5-Pentachlorobiphenyl",PCB114,74472-37-0,CH07/184,"2,3,4,4',5-Pentaklorbifenyl (PCB114)",CB-114
+CB118,PCBs,"2,3',4,4',5-Pentachlorobiphenyl",PCB118,31508-00-6,CH07/185,"2,3',4,4',5-Pentaklorbifenyl (PCB118)",CB-118
+CB123,PCBs,"2,3',4,4',5'-Pentachlorobiphenyl",PCB123,65510-44-3,CH07/183,"2,3',4,4',5'-Pentaklorbifenyl (PCB123)",CB-123
+CB156,PCBs,"2,3,3',4,4',5-Hexachlorobiphenyl",PCB156,38380-08-4,CH07/172,"2,3,3',4,4',5-Hexaklorbifenyl (PCB156)",CB-156
+CB157,PCBs,"2,3,4,3',4',5'-Hexachlorobiphenyl",PCB157,69782-90-7,CH07/180,"2,3,4,3',4',5'-Hexaklorbifenyl (PCB157)",CB-157
+CB167,PCBs,"2',3,4,4',5,5'-Hexachlorobiphenyl",PCB167,52663-72-6,CH07/181,"2',3,4,4',5,5'-Hexaklorbifenyl (PCB167)",CB-167
+CB189,PCBs,"2,3,3',4,4',5,5'-Heptachlorobiphenyl",PCB189,39635-31-9,CH07/168,"2,3,3',4,4',5,5'-Heptaklorbifenyl (PCB189)",CB-189
+CB28,PCBs,"2,4,4'-Trichlorobiphenyl",PCB28,7012-37-5,CH07/222,"2,4,4'-Triklorbifenyl (PCB28)",CB-28
+CB52,PCBs,"2,2',5,5'-Tetrachlorobiphenyl",PCB52,35693-99-3,CH07/159,"2,2',5,5'-Tetraklorbifenyl (PCB52)",CB-52
+CB101,PCBs,"2,2',4,5,5'-Pentachlorobiphenyl",PCB101,37680-73-2,CH07/150,"2,2',4,5,5'-Pentaklorbifenyl (PCB101)",CB-101
+CB153,PCBs,"2,2',4,4',5,5'-Hexachlorobiphenyl",PCB153,35065-27-1,CH07/138,"2,2',4,4',5,5'-Hexaklorbifenyl (PCB153)",CB-153
+CB138and163,PCBs,PCB138 + PCB163,,35065-28-2 + 74472-44-9,CH07/509,PCB138 + PCB163,
+CB180,PCBs,"2,2',3,4,4',5,5'-Heptachlorobiphenyl",PCB180,35065-29-3,CH07/112,"2,2',3,4,4',5,5'-Heptaklorbifenyl (PCB180)",CB-180
+PCBSUM,PCBs,Sum of PCBs from peak 1-14 in the chromatogram from packed column,Sum PCBs,,CH07/507,,
+CB138,PCBs,"2,2',3,4,4',5'-Hexaklorbifenyl",PCB138,35065-28-2,CH07/118,"2,2',3,4,4',5'-Hexaklorbifenyl (PCB138)",CB-138
+PFHPA,PFAS,"Perfluoroheptanoic acid, linear",PFHpA-linear,375-85-9,CH07/557,"Perfluorheptansyra (PFHpA), linjär",PFHPA
+PFHXA,PFAS,"Perfluorohexanoic acid, linear",PFHxA-linear,307-24-4,CH07/560,"Perfluorhexansyra (PFHxA), linjär",PFHXA
+PFOA,PFAS,"Perfluorooctanoic acid, linear",PFOA-linear,335-67-1,CH07/570,"Perfluoroktansyra (PFOA), linjär",PFOA
+PFNA,PFAS,"Perfluorononanoic acid, linear",PFNA-linear,375-95-1,CH07/561,"Perfluornonansyra (PFNA), linjär",PFNA
+PFDA,PFAS,"Perfluorodecanoic acid, linear",PFDA-linear,335-76-2,CH07/553,"Perfluordekansyra (PFDA), linjär",PFDA
+PFUNDA,PFAS,"Perfluoroundecanoic acid, linear",PFUnDA-linear,2058-94-8,CH07/576,"Perfluorundekansyra (PFUnDA), linjär",PFUNDA
+PFDODA,PFAS,"Perfluorododecanoic acid, linear",PFDoDA-linear,307-55-1,CH07/554,"Perfluordodekansyra (PFDoDA), linjär",PFDODA
+PFTRDA,PFAS,"Perfluorotridecanoic acid, linear",PFTriDA-linear,72629-94-8,CH07/575,"Perfluortridekansyra (PFTriDA), linjär",PFTRDA
+PFTEDA,PFAS,"Perfluorotetradecanoic acid, linear",PFTeDA-linear,376-06-7,CH07/574,"Perfluortetradekansyra (PFTeDA), linjär",PFTEDA
+PFPEDA,PFAS,"Perfluoropentadecanoic acid, linear",PFPeDA-linear,141074-63-7,CH07/572,"Perfluorpentadekansyra (PFPeDA), linjär",PFPEDA
+PFBS,PFAS,Perfluorobutane sulfonate,PFBS-isomer mix; mix of isomers (linear + branched),-,CH07/649,"Perfluorbutansulfonsyra (PFBS), isomermix (linjär + grenad)",PFBS
+LPFHXS,PFAS,"Perfluorohexanesulfonic acid, linear",PFHxS-linear,355-46-4,CH07/666,"Perfluorhexansulfonsyra (PFHxS), linjär",LPFHXS
+BPFHXS,PFAS,"Perfluorohexanesulfonic acid, branched",PFHxS-branched,-,CH07/668,"Perfluorhexansulfonsyra (PFHxS), grenad",BPFHXS
+PFHXS,PFAS,Perfluorohexanesulfonic acid,PFHxS-isomer mix; mix of isomers (linear + branched),-,CH07/667,"Perfluorhexansulfonsyra (PFHxS), isomermix (linjär + grenad)",PFHXS
+LPFOS,PFAS,"Perfluorooctanesulfonic acid, linear",PFOS-linear,1763-23-1; 132324-11-9,CH07/568,"Perfluoroktansulfonsyra (PFOS), linjär",LPFOS
+BPFOS,PFAS,"Perfluorooctanesulfonic acid, branched",PFOS-branched,-,CH07/679,"Perfluoroktansulfonsyra (PFOS), grenad",BPFOS
+PFOS,PFAS,Perfluorooctanesulfonic acid,PFOS-isomer mix; mix of isomers (linear + branched),-,CH07/678,"Perfluoroktansulfonsyra (PFOS), isomermix ( linjär + grenad)",PFOS
+LPFBS,PFAS,"Perfluorobutanesulfonic acid, linear",PFBS-linear,375-73-5 OBS (and several others),CH07/648,"Perfluorbutansulfonsyra (PFBS), linjär",LPFBS
+LPFDS,PFAS,"Perfluorodecanesulfonic acid, linear",PFDS-linear,335-77-3,CH07/552,"Perfluordekansulfonsyra (PFDS), linjär",LPFDS
+BPFDS,PFAS,"Perfluorodecanesulfonic acid, branched",PFDS-branched,-,CH07/654,"Perfluordekansulfonsyra (PFDS), grenad",BPFDS
+PFDS,PFAS,Perfluorodecanesulfonic acid,PFDS-isomer mix; mix of isomers (linear + branched),-,CH07/653,"Perfluordekansulfonsyra (PFDS), isomermix (linjär + grenad)",PFDS
+LFOSA,PFAS,"Perfluorooctane sulfonamide, linear",FOSA-linear,754-91-6,CH07/566,"Perfluoroktansulfonamid (FOSA), linjär",LFOSA
+BFOSA,PFAS,"Perfluorooctane sulfonamide, branched",FOSA-branched,-,CH07/565,"Perfluoroktansulfonamid (FOSA), grenad",BFOSA
+FOSA,PFAS,Perfluorooctane sulfonamide,FOSA-isomer mix; mix of isomers (linear + branched),-,CH07/677,"Perfluoroktansulfonamid (FOSA), isomermix (linjär + grenad)",FOSA
+x62FTS,PFAS,Fluorotelomer 6:2 sulfonate,6:2 FTS,425670-75-3; 27619-97-2,CH07/646,Fluortelomer 6:2-sulfonsyra (6:2 FTSA),
+HFPODA,PFAS,"2,3,3,3-Tetrafluoro-2-(1,1,2,2,3,3,3-heptafluoropropoxy)propanoic acid; 2,3,3,3-Tetrafluoro-2-(heptafluoropropoxy)propanoic acid; Hexafluoropropylene oxide dimer acid (HFPO-DA); GenX; FRD-903; Perfluoro-2-propoxypropanoic acid",GenX; Hexafluorpropylenoxiddimersyra (HFPO-DA/FRD-903),13252-13-6,CH07/895,Hexafluorpropylenoxiddimersyra (HFPO-DA/FRD-903),HFPO-DA
+NADONA ,PFAS,"Dodecafluoro-3H-4,8-dioxanonanoic acid; DONA; ADONA; 4,8-Dioxa-3H-perfluorononanoic acid","DONA, ADONA",919005-14-4,CH07/814,"Dodekafluor-3H-4,8-dioxanonansyra",NADONA 
+PFPRS,PFAS,Perfluoropropanesulfonic acid; Heptafluoropropanesulfonic acid; PFPrS,PFPrS,423-41-6,CH07/931,Perfluorpropansulfonsyra (PFPrS),PFPRS
+PFUNDS,PFAS,"Perfluoroundecanesulfonic acid, linear; PFUnDS-linear",PFUnDS-linear,749786-16-1,CH07/808,"Perfluorundekansulfonsyra (PFUnDS), linjär",PFUNDS
+PFDODS,PFAS,"Perfluorododecanesulfonic acid, linear; PFDoDS-linear",PFDoDS-linear,79780-39-5,CH07/774,"Perfluordodekansulfonsyra (PFDoDS), linjär",PFDODS
+PFTRDS,PFAS,"Perfluorotridecanesulfonic acid, linear; PFTriDS, linear",PFTriDS-linear,791563-89-8,CH07/890,"Perfluortridekansulfonsyra (PFTriDS), linjär",PFTRDS
+FBSA,PFAS,"Perfluorobutanesulfonamide, linear; n-Perfluorobutanesulfonamide; Perfluorobutane sulfonamide, linear; Perfluorobutylsulfonamide, linear; FBSA-linear",FBSA-linear,30334-69-1,CH07/970,"Perfluorbutansulfonamid (FBSA), linjär",FBSA
+FHXSA,PFAS,"Perfluorohexanesulfonamide, linear; n-Perfluorohexanesulfonamide; Perfluorohexane sulfonamide, linear, FFHxSA-linear; PFFHxSA-linear",FHxSA-linear,41997-13-1,CH07/971,"Perfluorhexansulfonamid (FHxSA), linjär",FHXSA
+PFODA,PFAS,"Perfluorooctadecanoic acid, linear; PFOcDA-linear; Perfluorostearic acid",PFOcDA-linear; PFODA-linear,16517-11-6,CH07/562,"Perfluoroktadekansyra (PFOcDA), linjär",PFODA
+PFHXDA,PFAS,"Perfluorohexadecanoic acid, linear; PFHxDA-linear; Perfluoropalmitic acid",PFHxDA-linear,67905-19-5,CH07/558,"Perfluorhexadekansyra (PFHxDA), linjär",PFHXDA
+PFBA,PFAS,"Perfluorobutanoic acid, linear; PFBA-linear; Heptafluorobutyric acid, linear",PFBA-linear,375-22-4,CH07/548,"Perfluorbutansyra (PFBA), linjär",PFBA
+PFPEA,PFAS,"Perfluoropentanoic acid, linear; PFPeA-linear; Perfluorovaleric acid, linear",PFPeA-linear,2706-90-3,CH07/573,"Perfluorpentansyra (PFPeA), linjär",PFPEA
+PFNS,PFAS,"Perfluorononanesulfonic acid, linear; PFNS-linear",PFNS-linear,68259-12-1,CH07/773,"Perfluornonansulfonsyra (PFNS), linjär",PFNS
+PFPES,PFAS,"Perfluoropentanesulfonic acid, linear; PFPeS-linear; Perfluoropentane-1-sulphonic acid",PFPeS-linear,2706-91-4,CH07/772,"Perfluorpentansulfonsyra (PFPeS), linjär",PFPES
+DDT,Pesticides and solvents,"DDT (p,p')",DDT,50-29-3,CH09/163,"DDT (p,p')",DDTK
+AHCH,Pesticides and solvents,alpha-Hexachlorocyclohexane,alpha-HCH,319-84-6,CH09/68,alfa-HCH (alfa-Hexaklorcyclohexan),AHCH
+BHCH,Pesticides and solvents,beta-Hexachlorocyclohexane,beta-HCH,319-85-7,CH09/111,beta-HCH (beta-Hexaklorcyklohexan),BHCH
+LINDAN,Pesticides and solvents,gamma-HCH,,58-89-9,CH09/420,Lindan (gamma-HCH),LINDAN
+DDE,Pesticides and solvents,"DDE (p,p')",DDE,72-55-9,CH09/160,"DDE (p,p')",DDEK
+DDD,Pesticides and solvents,"DDD (p,p')",DDD,72-54-8,CH09/158,"DDD (p,p')",DDDK
+HCB,Pesticides and solvents,Hexachlorobenzene,HCB,118-74-1,CH09/325,Hexaklorbensen,HCB
+fat_percentage,Biological,,,-,CH12/68,,
+C_dw_percentage,Biological,,,-,CH08/15,,
+d13C,Biological,,,-,CH04/8,,
+d15N,Biological,,,-,CH04/9,,
+N_dw_percentage,Biological,,,-,CH02/90,,
+total_length,Biological,,,-,CH12/161,,
+total_length,Biological,,,-,CH12/163,,
+dry_weight_percentage,Biological,,,-,CH12/224,,
+weight,Biological,,,-,CH12/232,,
+weight,Biological,,,-,CH12/234,,
+age,Biological,,,-,CH12/239,,
+age,Biological,,,-,CH12/241,,
