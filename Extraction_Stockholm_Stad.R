@@ -5,8 +5,20 @@
 library(tidyverse)
 library(readxl) 
 library(openxlsx) 
+library(fmcom)
 
 ##############################################-
+# import support files ----
+con <- read.csv("contaminants_SGU_NRM_copy.csv") |>
+  select(contaminant, substance_group, UNIK_PARAMETERKOD, CAS_number) |>
+  rename(contaminant_code_SGU = 'UNIK_PARAMETERKOD')
+
+TC <- read_excel("PFAS_tissue_conversion.xlsx", sheet ='HELCOM') |>
+  select(contaminant,perch) |>
+  filter(!is.na(perch)) |>
+  rename(TC = 'perch')
+
+
 # Data Stockholm stad ----
 s <- read_excel('original_data/fisk-miljogifter-radata-ar-2010-2023-2_stockholm_stad.xlsx', sheet='miljogifter_fisk_2010_2023',
                 col_types = c(c('text','text','text','text','numeric','numeric','numeric','numeric','text'),(rep(c('numeric'), 94)))) |>
@@ -60,9 +72,53 @@ sss <- ss |>
       unit == 'ng/g' & weight_unit == 'lipid' ~ 'ng.g-1.ww-1',
     ),
     species_EN = 'Perch',
+    class = 'Fish',
     is_censored = if_else(value > 0, FALSE, TRUE),
     value = abs(as.numeric(value))) |>
   select(!c(weight_unit,fat_tissue,Art, 'Poolat prov Ja/Nej')) |>
   rename(station_name = 'Lokal', year = 'År', number_individuals='Antal fiskar i poolat prov')
 
-write.xlsx(sss,"modified_data/Stokcholm_stad_contaminated.xlsx",showNA = FALSE, rowNames=FALSE)
+s4 <- sss |>
+  mutate(
+    contaminant = contaminant |>
+      str_replace("^PCB(?=\\d)", "CB") |>
+      str_replace("^PBDE(?=\\d)", "BDE")
+  ) |>
+  left_join(con, by='contaminant') |>
+  ### change organ names to English ----
+  mutate(
+    organ = NA_character_,
+    organ = case_when(
+    tissue == 'lever' ~'Liver',
+    tissue == 'muskel' ~ 'Muscle',
+    TRUE ~ organ)) |>
+  left_join(TC, by = c("contaminant")) |>
+  mutate(
+    value = case_when(
+      organ == 'Muscle' & substance_group == 'PFAS' ~ value*TC,
+      TRUE ~ value),
+    organ = case_when(
+      organ == 'Muscle' & substance_group == 'PFAS' ~ 'Liver',
+      TRUE ~ organ
+    )) |>
+  ## convert PCB and BFR substance_groups ww to lw ----
+  mutate(
+    value = case_when(
+      unit == 'ng.g-1.ww-1' & (substance_group == 'BFRs'|substance_group == 'PCBs') ~ value/fat_percentage,
+      TRUE ~ value),
+    unit = case_when(
+      unit == 'ng.g-1.ww-1' & (substance_group == 'BFRs' |substance_group == 'PCBs')~ 'ng.g-1.lw-1',
+      TRUE ~ unit
+  )) |>
+  ## remove contaminants which are not in the fmcom ----
+  filter(!is.na(substance_group))
+
+
+## guarantee every fmcom column exists, even if lack in SGU_data ----
+missing_cols <- setdiff(colnames(fmcom), colnames(s4))
+s4[missing_cols] <- NA
+
+## enforce fmcom column order ----
+s4 <- s4[, colnames(fmcom)]
+
+write.xlsx(s4,"modified_data/Stokcholm_stad_contaminated.xlsx",showNA = FALSE, rowNames=FALSE)
