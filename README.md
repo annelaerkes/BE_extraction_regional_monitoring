@@ -3,7 +3,7 @@ Extraction of perch and eelpout contaminant data from other sources (regional) t
 Folders:
 
 - original data contains original downloaded datasets. However for SGU, the data is now downloaded in the script directly from the SGU api.
-- modified data contains the datasets modified to match the fmcom structure
+- modified data contains the datasets modified to match the fmcom structure (see info on fmcom at https://github.com/NRM-MOC/fmcom).
 
 Files:
 
