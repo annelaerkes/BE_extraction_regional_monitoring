@@ -163,10 +163,13 @@ mutate(
   )) |>
   ### rename units ----
 mutate(unit = case_when(
-  enhet == 'ug.g-1.tv-1' ~ 'ug.g-1.dw-1', 
-  enhet == 'ng.g-1.vv-1' ~ 'ng.g-1.ww-1',
+  (enhet == 'ug.g-1.tv-1' | enhet == 'mg.kg-1.tv-1') ~ 'ug.g-1.dw-1', 
+  (enhet == 'ng.g-1.vv-1' | enhet == 'ug.kg-1.vv-1')  ~ 'ng.g-1.ww-1',
+  enhet == 'mg.kg-1.vv-1' ~ 'ug.g-1.ww-1',
   enhet == 'ng.g-1.lv-1' ~ 'ng.g-1.lw-1',
+  enhet == 'ng.g-1.tv-1' ~ 'ng.g-1.dw-1',
   enhet == 'pg.g-1.lv-1' ~ 'pg.g-1.lw-1',
+  enhet == 'pg.g-1.vv-1' ~ 'pg.g-1.ww-1',
   enhet == 'ug.g-1.lv-1' ~ 'ug.g-1.lw-1')) |>
   ### change organ names to English ----
 mutate(organ = case_when(
@@ -202,15 +205,15 @@ mutate(LOQ_LOD = case_when(
     is.na(matvstd) ~ FALSE,
     matvstd %in% c("q", "b", "Ja") ~ TRUE,
     TRUE ~ FALSE
-  )) |>
-  mutate(laboratory = case_when(
-    laboratory == 'PaverkadMiljo' ~ 'Impacted',
-    laboratory == 'Ej_bedomd_okand' ~ 'Unknown',
-    laboratory == 'Bakgrund' ~ 'Reference',
-    laboratory == 'Punktkalla' ~ 'Point source',
-    laboratory == 'LokalBakgrund' ~ 'Impacted background',
-    laboratory == 'Industrihamn' ~ 'Industrial harbour'
-  )) |>
+)) |>
+mutate(laboratory = case_when(
+  laboratory == 'PaverkadMiljo' ~ 'Impacted',
+  laboratory == 'Ej_bedomd_okand' ~ 'Unknown',
+  laboratory == 'Bakgrund' ~ 'Reference',
+  laboratory == 'Punktkalla' ~ 'Point source',
+  laboratory == 'LokalBakgrund' ~ 'Impacted background',
+  laboratory == 'Industrihamn' ~ 'Industrial harbour'
+)) |>
   ### add bio data ----
 #left_join(bio_data, by = "specimen_ID") |>
   ### add fat and dry weight percentages ----
@@ -222,15 +225,16 @@ left_join(TC, by = c("species_EN","contaminant")) |>
     organ = case_when(
       organ == 'Muscle' & substance_group == 'PFAS' ~ 'Liver',
       TRUE ~ organ
-  )) |>
-  left_join(station_cor, by='station_name') |>
-  ## add info on stations without lat/long
+)) |>
+left_join(station_cor, by='station_name') |>
+## add info on stations without lat/long
   mutate(station_name = case_when(
     station_name == 'Sa1' ~ 'Oxelosund_Sa1',
     station_name == 'Da1' ~ 'Oxelosund_Da1',
     station_name == 'Ha1' ~ 'Oxelosund_Ha1',
     TRUE ~station_name
-  ))
+)) |>
+filter(!is.na(value))
 
 
 
