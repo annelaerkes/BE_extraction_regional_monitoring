@@ -71,7 +71,7 @@ sss <- ss |>
       unit == 'µg/kg' & weight_unit == 'lipid' ~ 'ng.g-1.lw-1',
       unit == 'µg/kg' & weight_unit == 'vv' ~ 'ng.g-1.ww-1',
       unit == 'ng/g' & weight_unit == 'lipid' ~ 'ng.g-1.lw-1',
-      unit == 'ng/g' & weight_unit == 'lipid' ~ 'ng.g-1.ww-1',
+      unit == 'ng/g' & weight_unit == 'vv' ~ 'ng.g-1.ww-1',
     ),
     species_EN = 'Perch',
     class = 'Fish',
@@ -108,7 +108,7 @@ s4 <- sss |>
   mutate(
     value = case_when(
       unit == 'ng.g-1.ww-1' & 
-        (substance_group == 'BFRs'|substance_group == 'PCBs') ~ value/fat_percentage,
+        (substance_group == 'BFRs'|substance_group == 'PCBs') ~ value/(fat_percentage/100),
       TRUE ~ value),
     unit = case_when(
       unit == 'ng.g-1.ww-1' & 
