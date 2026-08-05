@@ -90,41 +90,50 @@ station_cor <- df |>
     latitude  = st_coordinates(.)[, 2]
   ) %>%
   st_drop_geometry() |>
-  filter(provtagningssyfte!='NMO',
-         bestalld_undersokning!='Effektscreening miljögifter') |>
+  #filter(provtagningssyfte != "NMO",
+  #      provtagningssyfte != "SCREENING",
+  #      provtagningssyfte !="OVRIGT") |>
   distinct(provplatsnamn, latitude, longitude) |>
+  summarize(
+    latitude  = mean(latitude, na.rm = TRUE),
+    longitude = mean(longitude, na.rm = TRUE),
+    .by = provplatsnamn
+  ) |>
   rename(station_name='provplatsnamn')
 
 
 
 # massage data ----
 df1 <- df |>
-  filter(provtagningssyfte!='NMO',
-         bestalld_undersokning!='Effektscreening miljögifter') |>
+  filter(provtagningssyfte != "NMO",
+         provtagningssyfte != "SCREENING",
+         provtagningssyfte != "OVRIGT",
+         provtagningssyfte != "KO",
+         ) |>
   ### explicit mapping: fmcom column name = SGU_data column name ----
-transmute(
-  specimen_ID = provkodoriginal,
-  year        = provtagningsdatum |> lubridate::year(),
-  month       = provtagningsdatum |> lubridate::month() |> 
-    stringr::str_pad(width = 2, pad = "0"),
-  day         = provtagningsdatum |> lubridate::day() |> 
-    stringr::str_pad(width = 2, pad = "0"),
-  date        = provtagningsdatum |> lubridate::as_date(),
-  station_code_SGU       = nationellt_provplatsid,
-  contaminant_code_SGU   = ntlkemiparameterid,
-  value       = matvardetal,
-  enhet       = enhet,
-  matvstd     = matvstd,
-  uncertainty = matosakerhet,
-  art         = art,
-  organ       = organ,
-  kon         = kon,
-  number_individuals     = antal,
-  sample_ID   = rapportkodlabb,
-  laboratory  = provplatstyp,
-  analysinstrument       = analysinstrument,
-  analysmetod = analysmetod,
-  station_name = provplatsnamn
+  transmute(
+    specimen_ID = provkodoriginal,
+    year        = provtagningsdatum |> lubridate::year(),
+    month       = provtagningsdatum |> lubridate::month() |> 
+      stringr::str_pad(width = 2, pad = "0"),
+    day         = provtagningsdatum |> lubridate::day() |> 
+      stringr::str_pad(width = 2, pad = "0"),
+    date        = provtagningsdatum |> lubridate::as_date(),
+    station_code_SGU       = nationellt_provplatsid,
+    contaminant_code_SGU   = ntlkemiparameterid,
+    value       = matvardetal,
+    enhet       = enhet,
+    matvstd     = matvstd,
+    uncertainty = matosakerhet,
+    art         = art,
+    organ       = organ,
+    kon         = kon,
+    number_individuals     = antal,
+    sample_ID   = rapportkodlabb,
+    laboratory  = provplatstyp,
+    analysinstrument       = analysinstrument,
+    analysmetod = analysmetod,
+    station_name = provplatsnamn
 ) |>
   ### join master table content ----
   left_join(con, by = c("contaminant_code_SGU"))|>
@@ -168,6 +177,7 @@ mutate(unit = case_when(
   (enhet == 'ug.g-1.tv-1' | enhet == 'mg.kg-1.tv-1') ~ 'ug.g-1.dw-1', 
   (enhet == 'ng.g-1.vv-1' | enhet == 'ug.kg-1.vv-1')  ~ 'ng.g-1.ww-1',
   enhet == 'mg.kg-1.vv-1' ~ 'ug.g-1.ww-1',
+  enhet == 'mg.kg-1.lv-1' ~ 'ug.g-1.lw-1',
   enhet == 'ng.g-1.lv-1' ~ 'ng.g-1.lw-1',
   enhet == 'ng.g-1.tv-1' ~ 'ng.g-1.dw-1',
   enhet == 'pg.g-1.lv-1' ~ 'pg.g-1.lw-1',
@@ -249,4 +259,6 @@ df2 <- df2[, colnames(fmcom)]
 
 # export dataset ----
 write.xlsx(df2,"modified_data/SGU_download_contaminated_json.xlsx",showNA = FALSE, rowNames=FALSE)
+
+write.csv(df2,"modified_data/SGU_download_contaminated_json.csv",na="",row.names=FALSE)
 
